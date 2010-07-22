@@ -101,6 +101,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+#custom: (%time%) [user@pc] $ %git-branch%
 PS1='(\t) [\u@\h]$`__git_ps1` '
 
 
