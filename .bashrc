@@ -101,7 +101,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+export GIT_PS1_SHOWDIRTYSTATE=1
 #custom: (%time%) [user@pc] $ %git-branch%
-PS1='(\t) [\u@\h]$`__git_ps1` '
+export PS1='\[\033[01;32m\](\t) [\u@\h]\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
+#PS1='(\t) [\u@\h]$`__git_ps1` '
 
 
