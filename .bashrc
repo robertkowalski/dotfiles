@@ -2,7 +2,10 @@
 
 #path to ruby gems
 PATH=$PATH:/var/lib/gems/1.8/bin
+PATH=$PATH:/var/lib/gems/1.9.1/bin
 
+#alias for ruby1.9.1
+alias ruby9='ruby1.9.1'
 
 
 #git extension + show time in bashlines
