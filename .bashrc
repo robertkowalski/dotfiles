@@ -11,5 +11,9 @@ export PATH="$PATH:~/node_modules/uglify-js/bin"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;32m\](\t) [\u@\h]\[\033[01;34m\] \w\[\033[01;33m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
+alias l='ls -al'
+alias ..='cd ..'
+alias ...='cd ../..'
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
