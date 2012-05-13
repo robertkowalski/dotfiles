@@ -1,19 +1,28 @@
 [user]
 	name = Robert Kowalski
 	email = rok@kowalski.gd
+
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+
 [alias]
 	co = checkout
 	st = status
 	rc = rebase --continue
 	elog = log  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ci = commit
+	df = diff
+	lg = log -p
+	br = branch
+
 [core]
 	autocrlf = false
 	editor = vim
+
 [branch]
 	autosetuprebase = always
 
+[rerere]
+	enabled = 1
