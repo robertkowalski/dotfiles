@@ -2,15 +2,15 @@
 	name = Robert Kowalski
 	email = rok@kowalski.gd
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+	diff = auto
+	status = auto
+	branch = auto
 [alias]
 	co = checkout
 	st = status
 	rc = rebase --continue
-  elog = log  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  ci = commit
+	elog = log  --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ci = commit
 [core]
 	autocrlf = false
 	editor = vim
