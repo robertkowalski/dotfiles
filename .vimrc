@@ -5,6 +5,8 @@ set expandtab
 set number
 colorscheme jellybeans
 set t_Co=256
+set background=dark
+syntax on
 
 filetype plugin indent on
 augroup vimrc
