@@ -26,3 +26,6 @@
 
 [rerere]
 	enabled = 1
+
+[init]
+	templatedir = ~/.my-git-templates

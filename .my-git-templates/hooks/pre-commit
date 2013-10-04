@@ -1,0 +1,39 @@
+#!/bin/sh
+
+files=$(git diff-index --name-status --cached HEAD | grep -v ^D | cut -c3-)
+
+# initial commit - files is null
+if [ -z "$files" ]
+then
+  files=$(git diff --cached --root --name-status | grep -v ^D | cut -c3-)
+fi
+
+if [ -n "$files" ]
+then
+  for f in $files
+  do
+    # Only examine text files
+    text=$(file $f | grep text)
+    if [ -n "$text" ]
+    then
+      # return error if no newline
+      if [ "$(tail -c1 $f)" != '' ]
+      then
+        echo "Errors in file \"$f\":"
+        echo "Missing newline at end"
+        exit 1
+      fi
+      text=""
+      # or still unstaged No newline at end of file
+      unstaged=$(git diff $f | grep "No newline at end of file")
+      if [ -n "$unstaged" ]
+      then
+        echo "Errors in file \"$f\":"
+        echo "Missing newline at end - unstaged file"
+        exit 1
+      fi
+      unstaged=""
+    fi
+  done
+  exit 0
+fi
