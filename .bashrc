@@ -1,3 +1,8 @@
+source ~/.git-prompt.sh
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 #git extension + show time in bashlines
 #format: (%time%) [user@pc] $ %git-branch% [status]
 export GIT_PS1_SHOWDIRTYSTATE=1
