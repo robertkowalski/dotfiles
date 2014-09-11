@@ -11,3 +11,11 @@ export PS1='\[\033[01;32m\](\t) [\u@\h]\[\033[01;34m\] \w\[\033[01;33m\]$(__git_
 alias l='ls -al'
 alias ..='cd ..'
 alias ...='cd ../..'
+
+pr () {
+  git fetch origin refs/pull/$1/head:refs/remotes/origin/pr/$1 --force
+  git checkout -b pr/$1 origin/pr/$1
+  git rebase master
+  git checkout master
+  git merge pr/$1 --ff-only
+}
