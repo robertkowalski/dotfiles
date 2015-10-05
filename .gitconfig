@@ -30,3 +30,6 @@
 
 [init]
 	templatedir = ~/.my-git-templates
+
+[push]
+	default = current
