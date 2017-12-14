@@ -20,3 +20,8 @@ pr () {
   git checkout master
   git merge pr/$1 --ff-only
 }
+
+review () {
+  git fetch origin refs/pull/$1/head:refs/remotes/origin/pr/$1 --force
+  git checkout -b pr/$1 origin/pr/$1
+}
