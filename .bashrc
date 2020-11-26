@@ -22,12 +22,7 @@ pr () {
 }
 
 review () {
-  git checkout master
-
-  if [ $? -ne 0 ]
-  then
-    git checkout main
-  fi
+  git checkout master || git checkout main
 
   git branch -D pr/$1
   git fetch origin refs/pull/$1/head:refs/remotes/origin/pr/$1 --force
